@@ -1,0 +1,78 @@
+@import "config";
+
+body{
+    background-image: url("../../moroccan-flower.png");
+}
+.wrapper{
+    position:relative;
+    min-height:100vh;
+    max-width:1000px;
+    margin:0 auto;
+}
+.main_header{
+    border:$border;
+    transform:$transform;
+    background-color: $mainBgc;
+    @include position(fixed,10%,80%);
+    @include width(30%);
+    @include align(center);
+    &--heading{
+        font-size:$font*2;
+        text-transform: uppercase;
+        @include align(center);
+    }
+    & [data-error]{
+        color:red;
+    }
+    & .error{
+        display:none;
+    }
+    & .formElement{
+        margin-top:$margin*2;
+    }
+}
+.todo_container{
+    @include width(50%);
+    border:$border;
+    background-color: $mainBgc;
+    & .search{
+        display:flex;
+        p{
+            margin:$margin;
+        }
+        &-input{
+            margin-left:$margin;
+            padding-left:$margin;
+        }
+    }
+    .todo_list{
+        padding:$margin*3;
+        & div{
+            border:$border;
+            margin-bottom:$margin;
+            height:40px;
+            display:flex;
+            @include flex(row,space-around,center);
+            h3{
+                font-family:map-get($fonts,second);
+            }
+            i{
+                cursor:pointer;
+                font-size:$font+5;
+            }
+        }
+    }
+}
+@media(max-width:500px){
+    .wrapper{
+        display:flex;
+        @include flex(row,center,center);
+    }
+    .main_header{
+        @include width(80%);
+        @include position(fixed,10%,50%);
+    }
+    .todo_container{
+        @include width(90%);
+    }
+}
