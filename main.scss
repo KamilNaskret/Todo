@@ -13,7 +13,7 @@ body{
     border:$border;
     transform:$transform;
     background-color: $mainBgc;
-    @include position(fixed,10%,80%);
+    @include position(absolute,10%,80%);
     @include width(30%);
     @include align(center);
     &--heading{
@@ -64,15 +64,12 @@ body{
     }
 }
 @media(max-width:500px){
-    .wrapper{
-        display:flex;
-        @include flex(row,center,center);
-    }
     .main_header{
         @include width(80%);
-        @include position(fixed,10%,50%);
+        @include position(absolute,-10%,50%);
     }
     .todo_container{
         @include width(90%);
+        margin:150px auto;
     }
 }
