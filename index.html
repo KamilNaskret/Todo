@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos App</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="main.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="main_header">
+            <h2 class="main_header--heading">
+                Todo App
+            </h2>
+            <form data-formTodo>
+                <div class="formElement">
+                    <label for="todoAdd" class="formLabel">Podaj treść:</label>
+                    <input type="text" name="todoAdd" data-itemTodo class="formInput">
+                    <input type="submit" class="formButton" data-addTodo value="Dodaj">
+                </div>
+            </form>
+            <p class="error" data-error>Puste pole uzupełnij</p>
+        </header>
+        <section class="todo_container">
+            <h2 class="main_header--heading">
+                Zadania
+            </h2>
+            <div class="search">
+                <p>Wyszukaj:</p>
+                <input type="text" class="searchInput" data-search>
+            </div>
+            <div class="todo_list" data-container>
+
+            </div>
+        </section>
+    </div>
+</body>
+</html>
