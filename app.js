@@ -40,7 +40,21 @@ class Todo{
     }
 }
 
-
+class Search{
+    constructor(value){
+        this.searchValue=search.value;
+    }
+    searching(){
+        const blockElements = document.querySelectorAll("[data-element]");
+        blockElements.forEach((element) => {
+            if(element.firstChild.innerHTML.includes(this.searchValue)){
+                element.style.setProperty("display","");
+            }else{
+                element.style.setProperty("display","none");
+            }
+        });
+    }
+}
 
 // Variables
 
@@ -56,15 +70,8 @@ const search = document.querySelector("[data-search]");
 // Event Listener
 
 search.addEventListener("input",() => {
-    const blockElements = document.querySelectorAll("[data-element]");
-    let searchValue = search.value;
-    blockElements.forEach((element) => {
-        if(element.firstChild.innerHTML.includes(searchValue)){
-            element.style.setProperty("display","");
-        }else{
-            element.style.setProperty("display","none");
-        }
-    });
+    const searchTodo = new Search(search.value);
+    searchTodo.searching();
 })
 
 formTodo.addEventListener('submit',(e) => {
